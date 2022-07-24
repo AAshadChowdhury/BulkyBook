@@ -1,0 +1,43 @@
+﻿
+@model Category
+
+
+<form method="Post" asp-action="Edit">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">
+                Edit Category
+            </h2>
+            <hr />
+<div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        <div class='mb-3'>
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+        </div>
+        <div class='mb-3'>
+            <label asp-for="DisplayOrder"></label>
+            <input asp-for="DisplayOrder" class="form-control"/>
+             <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+        </div>
+         <div class='mb-3'>
+            <label asp-for="CreateDateTime">Create DateTime</label>
+            <input asp-for="CreateDateTime" DateType="Date" asp-format="{0:yyyy-MM-ddThh:mm}"  class="form-control"/>
+             <span asp-validation-for="CreateDateTime" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+    <br />
+
+</form>
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
+
